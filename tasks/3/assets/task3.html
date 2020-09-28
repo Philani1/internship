@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cybersec Clinique task3</title>
+    <link rel="stylesheet" href="mystyles.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="myjavascript.js"></script>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <div class="formdiv" >
+        <div class="withinformdiv">
+            <h1>COVID-19 Employee Screening Survey</h1>
+            <hr class="newHor">
+            <h2>Tell us a little bit about yourself</h2>
+            
+            <form action="task3.html" onsubmit="return checkForm(this);"name="myForm">
+
+                <label for="fname">Your Name:*</label>
+                <input type="text" id="fname" name="fname">
+
+                <label for="lname">Your Surname:*</label>
+                <input type="text" id="lname" name="lname">
+
+                <label for="email">Your email:*</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="cars">Choose department:</label>
+                <select name="department" id="department">
+                    <option value="Production">Production</option>
+                    <option value="Research and Development">Research and Development</option>
+                    <option value="Purchasing">Purchasing</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Human_Resource_Management">Human Resource Management</option>
+                    <option value="Accounting_and_Finance">Accounting and Finance</option>
+                </select>
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                </fieldset>
+                <br>
+                <label for="moreAbout">Tells us more about yourself:</label>
+                <textarea id="moreAbout" name="moreAbout" rows="8" cols="60">
+                </textarea>
+
+                <hr class="newHor">
+
+                <h2>Are you above the age of 60?</h2>
+                <label for="age"><img src="yes.png" alt="yes image">
+                    <input type="radio" id="ageYes" name="age" value="ageYes">
+                </label>
+
+
+                <label for="age"><img src="no.jpg" alt="yes image">
+                    <input type="radio" id="ageNo" name="age" value="ageNo">
+                </label>
+
+                <h2>Have you recently travelled to any high-risk country or any high-risk area defined under the
+                    National
+                    Disaster Regulations?</h2>
+                <label for="travel"><img src="yes.png" alt="yes image">
+                    <input type="radio" id="travelYes" name="travel" value="travelYes">
+                </label>
+                <label for="travel"><img src="no.jpg" alt="yes image">
+                    <input type="radio" id="travelNo" name="travel" value="travelNo">
+                </label>
+
+
+                <h2>Have you in the past two weeks interacted with a person who has been found Covid-19 positive?</h2>
+                <p>If so provide details in the pop up box.</p>
+                <label for="interacted"><img src="yes.png" alt="yes image">
+                    <input type="radio" id="interactedYes" name="interacted" value="interactedYes">
+                </label>
+
+                <label for="interacted"><img src="no.jpg" alt="yes image">
+                    <input type="radio" id="interactedNo" name="interacted" value="interactedNo">
+                </label>
+
+                <div id="ifYes">
+                    <label for="provideDetails">Provide details:</label>
+                    <textarea id="provideDetails" name="provideDetails" rows="8" cols="60">
+                    </textarea>
+                </div>
+                <hr class="newHor">
+
+                <h2> Tick if you suffer from any of the following conditions in a non-medicated or non-controlled manner
+                </h2>
+                <label for="hypertension"><img src="hypertension.png" alt="hypertension image"> Hypertension
+                    <input type="checkbox" id="hypertension" name="hypertension" value="hypertension">
+                </label>
+
+                <label for="diabetes"><img src="diabete.jpg" alt="diabetes image"> Diabetes
+                    <input type="checkbox" id="diabetes" name="diabetes" value="diabetes">
+                </label>
+
+                <label for="epilepsy"><img src="epilepsy.jpg" alt="epilepsy image"> Epilepsy
+                    <input type="checkbox" id="epilepsy" name="epilepsy" value="epilepsy">
+                </label>
+
+                <label for="asthma"><img src="asthma.gif" alt="asthma image"> Asthma
+                    <input type="checkbox" id="asthma" name="asthma" value="asthma">
+                </label><br>
+
+                <label for="tb"><img src="tb.jpg" alt="tb image"> TB
+                    <input type="checkbox" id="tb" name="tb" value="tb">
+                </label>
+
+                <label for="pregnant"><img src="pregnant.png" alt="tb image"> Pregnant
+                    <input type="checkbox" id="pregnant" name="pregnant" value="pregnant">
+                </label>
+
+                <label for="none"><img src="none.png" alt="none image"> None
+                    <input type="checkbox" id="none" name="none" value="none">
+                </label>
+
+                <hr class="newHor">
+                <h2> Symptom Check </h2>
+                <label for="fever"><img src="fever.png" alt="fever image"> Fever
+                    <input type="checkbox" id="fever" name="fever" value="fever">
+                </label>
+
+                <label for="cough"><img src="cough.jpg" alt="cough image"> Cough
+                    <input type="checkbox" id="cough" name="cough" value="cough">
+                </label>
+
+                <label for="sorethroat"><img src="sorethroat.png" alt="sorethroat image"> Sore throat
+                    <input type="checkbox" id="sorethroat" name="sorethroat" value="sorethroat">
+                </label>
+
+                <label for="shortbreath"><img src="shortbreath.jpg" alt="shortbreath image"> Shortness of breath
+                    <input type="checkbox" id="shortbreath" name="shortbreath" value="shortbreath"><br>
+                </label><br>
+
+                <label for="bodyaches"><img src="bodyaches.jpg" alt="bodyaches image"> Body Aches
+                    <input type="checkbox" id="bodyaches" name="bodyaches" value="bodyaches">
+                </label>
+
+                <label for="smell"><img src="smell.jpg" alt="smell image"> Loss of smell
+                    <input type="checkbox" id="smell" name="smell" value="smell">
+                </label>
+
+                <label for="taste"><img src="taste.png" alt="taste image"> Lost of taste
+                    <input type="checkbox" id="taste" name="sortastethroat" value="taste">
+                </label>
+
+                <label for="nausea"><img src="nausea .png" alt="nausea image"> Nausea
+                    <input type="checkbox" id="nausea" name="nausea" value="nausea"><br>
+                </label><br>
+
+                <label for="vomiting"><img src="vomiting.jpg" alt="vomiting image"> Vomiting
+                    <input type="checkbox" id="vomiting" name="vomiting" value="vomiting">
+                </label>
+
+                <label for="diarrhoea"><img src="diarrhoea.gif" alt="diarrhoea image"> Diarrhoea
+                    <input type="checkbox" id="diarrhoea" name="diarrhoea" value="diarrhoea">
+                </label>
+
+                <label for="fatigue"><img src="fatigue.jpg" alt="fatigue image"> Fatigue
+                    <input type="checkbox" id="fatigue" name="fatigue" value="fatigue">
+                </label>
+
+                <label for="none1"><img src="none.png" alt="none image"> None
+                    <input type="checkbox" id="none1" name="none1" value="none1">
+                </label>
+
+                <hr class="newHor">
+                <h2>Are you cleared by the Doctor to come to work?</h2>
+                <p>If cleared by the doctor you'll have to provide proof in the pop up box.</p>
+                <label for="doctor"><img src="yes.png" alt="yes image">
+                    <input type="radio" id="yesDoctor" name="doctor" value="yesDoctor">
+                </label>
+
+                <label for="doctor"><img src="no.jpg" alt="noDoctor image">
+                    <input type="radio" id="noDoctor" name="doctor" value="noDoctor">
+                </label>
+
+                <div id="ifYesDoctor">
+                    <fieldset id="uploadFieldset">
+                        <legend>Upload File:</legend>
+                        <p>Click the button to upload Doctor's letter.</p>
+                        <label for="myfile">Select files:</label>
+                        <input type="file" id="myfile" name="myfile" accept=".pdf,.doc, .docx, .png, .jpg, .jpeg">
+                    </fieldset>
+                </div>
+                <hr class="newHor">
+
+
+                <fieldset id="fielDeclaration">
+                    <legend>Declaration*</legend>
+                    <label for="declaration">
+                        <input type="checkbox" id="declaration" name="declaration" value="declaration">
+                        <p>I hereby declare that all the information furnished above is, to the best of my knowledge,
+                            true and correct and that no information has been omitted or withheld. I hereby grant the
+                            company permission to make use of the information contained in this document to determine my
+                            personal Covid-19 risk on site.</p>
+                    </label>
+                </fieldset><br>
+
+                <div class="btn-center" id="btnSubmit">
+                    <button type="submit" class="btnSubmit">Submit</button>
+                </div><br><br>
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
